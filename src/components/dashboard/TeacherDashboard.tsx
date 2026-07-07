@@ -10,7 +10,7 @@ import {
   Save,
   UsersRound
 } from "lucide-react";
-import { AIMaterialGenerator } from "./AIMaterialGenerator";
+import { MaterialGenerator } from "./MaterialGenerator";
 import { MaterialLibrary } from "./MaterialLibrary";
 import { useLearningCenterStore } from "@/lib/local-store";
 import type { Attendance, Grade } from "@/lib/types";
@@ -22,7 +22,7 @@ const tabs = [
   { id: "grades", label: "Nilai", icon: BookOpenCheck },
   { id: "notes", label: "Catatan", icon: FilePenLine },
   { id: "materials", label: "Materi", icon: GraduationCap },
-  { id: "ai", label: "AI Materi", icon: GraduationCap }
+  { id: "digital", label: "Materi Digital", icon: GraduationCap }
 ] as const;
 
 type TabId = (typeof tabs)[number]["id"];
@@ -105,7 +105,7 @@ export function TeacherDashboard() {
         })}
       </div>
 
-      {activeTab !== "ai" && activeTab !== "materials" ? (
+      {activeTab !== "digital" && activeTab !== "materials" ? (
         <ClassPicker
           classes={teacherClasses}
           selectedClassId={selectedClassId}
@@ -146,7 +146,7 @@ export function TeacherDashboard() {
       {activeTab === "materials" ? (
         <MaterialLibrary materials={data.materials} subjects={data.subjects} />
       ) : null}
-      {activeTab === "ai" ? <AIMaterialGenerator /> : null}
+      {activeTab === "digital" ? <MaterialGenerator /> : null}
     </div>
   );
 }
