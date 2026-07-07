@@ -1,17 +1,17 @@
 # Smart Kids Learning Center
 
-MVP website dan sistem manajemen bimbel SD modern berbasis AI. Project ini dibuat dengan Next.js, TypeScript, Tailwind CSS, mock/local storage fallback, dan struktur Supabase-ready.
+MVP website dan sistem manajemen bimbel SD modern berbasis teknologi. Project ini dibuat dengan Next.js, TypeScript, Tailwind CSS, mock/local storage fallback, dan struktur Supabase-ready.
 
 ## Fitur
 
 - Landing page promosi untuk bimbel SD kelas 1-6
 - Form pendaftaran murid
-- Dashboard admin: murid, kelas, jadwal, guru, pembayaran, absensi, nilai, laporan, AI materi
-- Dashboard guru: jadwal, daftar murid, absensi, nilai, catatan perkembangan, materi, AI materi
+- Dashboard admin: murid, kelas, jadwal, guru, pembayaran, absensi, nilai, laporan, materi digital
+- Dashboard guru: jadwal, daftar murid, absensi, nilai, catatan perkembangan, materi, materi digital
 - Dashboard orang tua: jadwal anak, kehadiran, nilai, catatan guru, pembayaran, laporan
 - Dashboard owner: pendapatan, piutang, kapasitas kelas, ringkasan guru
 - Modul materi dengan struktur mapel, kelas, bab, tujuan, ringkasan, contoh soal, latihan, PR, catatan guru
-- Generate Materi AI dummy/mock, siap diganti dengan pemanggilan OpenAI API
+- Generator Materi Digital dummy/mock, siap dikembangkan sesuai kebutuhan operasional bimbel
 - Schema dan seed SQL untuk Supabase
 
 ## Cara Menjalankan Lokal
@@ -55,7 +55,6 @@ Salin `.env.example` menjadi `.env.local`.
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
-OPENAI_API_KEY=
 ```
 
 Jika Supabase belum dikonfigurasi, aplikasi tetap berjalan memakai mock data dan local storage browser.
@@ -95,13 +94,13 @@ Urutan awal:
 4. Isi `.env.local`.
 5. Ganti pemakaian `useLearningCenterStore` dengan query Supabase bertahap.
 
-## AI Integration
+## Generator Materi Digital
 
 Dummy generator ada di:
 
-- `src/lib/ai.ts`
-- `src/app/api/ai/material/route.ts`
-- `src/components/dashboard/AIMaterialGenerator.tsx`
+- `src/lib/material-generator.ts`
+- `src/app/api/material/route.ts`
+- `src/components/dashboard/MaterialGenerator.tsx`
 
 Output sudah dibentuk sebagai:
 
@@ -112,7 +111,7 @@ Output sudah dibentuk sebagai:
 - Pembahasan
 - Catatan untuk orang tua
 
-Saat ingin memakai OpenAI API, ganti blok mock di route API dengan request model dan tetap kembalikan struktur `AIMaterialOutput` agar UI tidak perlu berubah.
+Saat ingin mengembangkan generator materi, ganti blok mock di route API dengan layanan yang dipilih dan tetap kembalikan struktur `MaterialGeneratorOutput` agar UI tidak perlu berubah.
 
 ## Struktur Project
 
@@ -122,12 +121,12 @@ src/
     dashboard/
     login/
     materi/
-    api/ai/material/
+    api/material/
   components/
     dashboard/
     landing/
   lib/
-    ai.ts
+    material-generator.ts
     auth.ts
     local-store.ts
     mock-data.ts
@@ -147,4 +146,4 @@ public/images/
 - Ganti local storage dengan repository/service layer Supabase.
 - Tambahkan upload bukti pembayaran ke Supabase Storage.
 - Buat export PDF laporan bulanan.
-- Sambungkan generator AI ke OpenAI API dengan validasi JSON schema.
+- Sambungkan generator materi digital ke layanan yang dipilih dengan validasi JSON schema.
