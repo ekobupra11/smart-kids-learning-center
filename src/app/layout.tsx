@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Smart Kids Learning Center",
   description:
-    "MVP website dan sistem manajemen bimbel SD berbasis AI untuk pendaftaran, kelas, pembayaran, absensi, nilai, dan laporan perkembangan."
+    "MVP website dan sistem manajemen bimbel SD berbasis teknologi untuk pendaftaran, kelas, pembayaran, absensi, nilai, dan laporan perkembangan."
 };
 
 export default function RootLayout({
