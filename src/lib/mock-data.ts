@@ -420,7 +420,7 @@ export const initialData: AppData = {
       name: "Regular",
       price: 450000,
       frequency: "8x per bulan",
-      features: ["Kelas kecil", "Modul AI personal", "Laporan perkembangan", "Latihan mingguan"],
+      features: ["Kelas kecil", "Modul belajar digital", "Laporan perkembangan", "Latihan mingguan"],
       highlighted: true
     },
     {
@@ -460,9 +460,9 @@ export const initialData: AppData = {
       answer: "Ya, program tersedia untuk SD kelas 1 sampai kelas 6 dengan pengelompokan sesuai level."
     },
     {
-      question: "Apakah AI menggantikan guru?",
+      question: "Apakah guru selalu menggunakan teknologi?",
       answer:
-        "Tidak. AI membantu menyiapkan ringkasan dan latihan personal, sedangkan guru tetap mendampingi proses belajar anak."
+        "Guru menggunakan teknologi sebagai alat bantu saat dibutuhkan, tetapi pendampingan utama tetap dilakukan langsung oleh guru."
     },
     {
       question: "Berapa jumlah murid per kelas?",
