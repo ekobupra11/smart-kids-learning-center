@@ -13,7 +13,7 @@ import {
   RotateCcw,
   UsersRound
 } from "lucide-react";
-import { AIMaterialGenerator } from "./AIMaterialGenerator";
+import { MaterialGenerator } from "./MaterialGenerator";
 import { MaterialLibrary } from "./MaterialLibrary";
 import { StudentManager } from "./StudentManager";
 import { useLearningCenterStore } from "@/lib/local-store";
@@ -26,7 +26,7 @@ const tabs = [
   { id: "payments", label: "Pembayaran", icon: ReceiptText },
   { id: "progress", label: "Absensi & Nilai", icon: BookOpenCheck },
   { id: "reports", label: "Laporan", icon: FileText },
-  { id: "ai", label: "AI Materi", icon: GraduationCap }
+  { id: "digital", label: "Materi Digital", icon: GraduationCap }
 ] as const;
 
 type TabId = (typeof tabs)[number]["id"];
@@ -78,7 +78,7 @@ export function AdminDashboard() {
       ) : null}
       {activeTab === "progress" ? <AttendanceGradePanel data={data} /> : null}
       {activeTab === "reports" ? <ReportPanel data={data} /> : null}
-      {activeTab === "ai" ? <AIMaterialGenerator /> : null}
+      {activeTab === "digital" ? <MaterialGenerator /> : null}
     </div>
   );
 }
