@@ -6,7 +6,6 @@ import {
   ArrowRight,
   BarChart3,
   BookOpenCheck,
-  BrainCircuit,
   CheckCircle2,
   ChevronRight,
   MessageCircle,
@@ -34,9 +33,9 @@ const advantages = [
     description: "Orang tua bisa melihat kehadiran, nilai, catatan guru, dan saran belajar."
   },
   {
-    icon: BrainCircuit,
-    title: "Modul AI",
-    description: "Materi dan latihan personal bisa digenerate sesuai kelas, mapel, dan bab."
+    icon: BookOpenCheck,
+    title: "Modul Digital",
+    description: "Materi dan latihan disusun sesuai kelas, mata pelajaran, dan bab."
   }
 ];
 
@@ -87,14 +86,14 @@ export function LandingPage() {
         <div className="container-page grid min-h-[calc(100vh-4rem)] items-center gap-10 py-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative z-10 max-w-2xl">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ocean-700 shadow-soft">
-              <BrainCircuit className="h-4 w-4" />
-              Bimbel SD modern berbasis AI
+              <BookOpenCheck className="h-4 w-4" />
+              Bimbel SD modern berbasis Teknologi
             </div>
             <h1 className="text-4xl font-bold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
               Smart Kids Learning Center
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">
-              Program bimbel SD kelas 1-6 dengan kelas kecil, guru sabar, latihan personal,
+              Program bimbel SD kelas 1-6 dengan kelas kecil, guru sabar, latihan terarah,
               dashboard orang tua, dan laporan perkembangan bulanan.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -111,7 +110,7 @@ export function LandingPage() {
               {[
                 ["1-6", "Kelas SD"],
                 ["8x", "Laporan/bulan"],
-                ["AI", "Latihan personal"]
+                ["Digital", "Materi terarah"]
               ].map(([value, label]) => (
                 <div key={label} className="rounded-lg border border-ocean-100 bg-white p-4 shadow-soft">
                   <div className="text-2xl font-bold text-ocean-700">{value}</div>
@@ -123,7 +122,7 @@ export function LandingPage() {
           <div className="relative min-h-[360px] lg:min-h-[560px]">
             <Image
               src="/images/hero-learning-center.png"
-              alt="Anak-anak SD belajar bersama guru dan tablet AI"
+              alt="Anak-anak SD belajar bersama guru dan tablet pembelajaran digital"
               fill
               priority
               className="rounded-lg object-cover shadow-soft"
@@ -138,7 +137,7 @@ export function LandingPage() {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="label text-ocean-700">Program SD kelas 1-6</p>
-              <h2 className="mt-3 text-3xl font-bold text-ink">Belajar lebih personal, terukur, dan menyenangkan.</h2>
+              <h2 className="mt-3 text-3xl font-bold text-ink">Belajar lebih terarah, terukur, dan menyenangkan.</h2>
               <p className="mt-4 leading-8 text-slate-600">
                 Setiap kelas punya jadwal, guru, materi, murid, absensi, nilai, dan laporan. Admin,
                 guru, orang tua, dan owner mendapat tampilan dashboard sesuai kebutuhan.
@@ -270,7 +269,7 @@ export function LandingPage() {
 
       <footer className="border-t border-slate-200 bg-white py-8">
         <div className="container-page flex flex-col justify-between gap-4 text-sm text-slate-500 md:flex-row">
-          <span>© 2026 Smart Kids Learning Center. MVP bimbel SD berbasis AI.</span>
+          <span>2026 Smart Kids Learning Center. MVP bimbel SD berbasis teknologi.</span>
           <div className="flex gap-4">
             <Link href="/login" className="font-semibold text-ocean-700">
               Dashboard
